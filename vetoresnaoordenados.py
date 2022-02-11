@@ -9,14 +9,14 @@ class VetorNaoOrdenado:
 
     def imprime(self):
         if self.ultima_posicao == -1:
-            print('O vetor está vazio')
+            print("O vetor está vazio")
         else:
             for i in range(self.ultima_posicao + 1):
-                print(i, ' _ ', self.valores[i])
+                print(i, " _ ", self.valores[i])
 
     def insere(self, valor):
         if self.ultima_posicao == self.capacidade - 1:
-            print('Capacidade maxima atiginda')
+            print("Capacidade maxima atiginda")
         else:
             self.ultima_posicao += 1
             self.valores[self.ultima_posicao] = valor
@@ -30,10 +30,10 @@ class VetorNaoOrdenado:
     def excluir(self, valor):
         posicao = self.pesquisar(valor)
         if posicao == -1:
-            return -1 # elemento nao existe entao não é possivel apagar
+            return -1  # elemento nao existe entao não é possivel apagar
         else:
             for i in range(posicao, self.ultima_posicao):
-                self.valores[i] = self.valores[i+1]
+                self.valores[i] = self.valores[i + 1]
 
             self.ultima_posicao -= 1
 
