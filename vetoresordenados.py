@@ -38,12 +38,34 @@ class VetorOrdenado:
         self.ultima_posicao += 1
 
     # O(n)
-    def pesquisar(self, valor):
+    def pesquisa_linear(self, valor):
         for i in range(self.ultima_posicao + 1):
             if self.valores[i] > valor or i == self.ultima_posicao:
                 return -1
             if self.valores[i] == valor:
                 return i
+
+    # O(log n)
+    def pesquisa_binaria(self, valor):
+        limite_inferior = 0                     # Inbound
+        limite_superior = self.ultima_posicao   # Outbound
+
+        while True:
+            posicao_atual = int((limite_inferior + limite_superior) / 2)
+            # Se achou na primeira tentativa
+            if self.valores[posicao_atual] == valor:
+                return posicao_atual
+            # Se nao achou
+            elif limite_inferior > limite_superior:
+                return -1
+            # Divide os limites
+            else:
+                # Limite Inferior
+                if self.valores[posicao_atual] < valor:
+                    limite_inferior = posicao_atual + 1
+                # Limite Superior
+                else:
+                    limite_superior = posicao_atual - 1
 
     # O(n)
     def excluir(self, valor):
@@ -56,20 +78,31 @@ class VetorOrdenado:
 
             self.ultima_posicao -= 1
 
-# teste do vetor
 
 vetor = VetorOrdenado(10)
-
-vetor.insere(6)
-vetor.insere(4)
-vetor.insere(3)
-vetor.insere(5)
-vetor.insere(1)
+# Insercao
 vetor.insere(8)
+vetor.insere(9)
+vetor.insere(4)
+vetor.insere(1)
+vetor.insere(5)
+vetor.insere(7)
+vetor.insere(11)
+vetor.insere(13)
+vetor.insere(2)
+vetor.imprime()
 
-vetor.pesquisar(3)
-vetor.pesquisar(2)
-vetor.pesquisar(9)
+# Debug do vetor pela pesquisa linear
+vetor.pesquisa_linear(3)
+vetor.pesquisa_linear(2)
+vetor.pesquisa_linear(9)
 
-vetor.excluir(5)
-vetor.excluir(9)
+# Exclusao
+# vetor.excluir(15)
+# vetor.excluir(9)
+
+# Debug do vetor pela pesquisa Binaria
+vetor.pesquisa_binaria(7)
+vetor.pesquisa_binaria(5)
+vetor.pesquisa_binaria(13)
+vetor.pesquisa_binaria(20)
