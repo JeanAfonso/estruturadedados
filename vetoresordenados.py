@@ -40,7 +40,18 @@ class VetorOrdenado:
     # O(n)
     def pesquisar(self, valor):
         for i in range(self.ultima_posicao + 1):
-            if self.valores[i] > valor:
+            if self.valores[i] > valor or i == self.ultima_posicao:
                 return -1
             if self.valores[i] == valor:
                 return i
+
+    # O(n)
+    def excluir(self, valor):
+        posicao = self.pesquisar(valor)
+        if posicao == -1:
+            return -1  # elemento nao existe entao não é possivel apagar
+        else:
+            for i in range(posicao, self.ultima_posicao):
+                self.valores[i] = self.valores[i + 1]
+
+            self.ultima_posicao -= 1
