@@ -55,3 +55,21 @@ class VetorOrdenado:
                 self.valores[i] = self.valores[i + 1]
 
             self.ultima_posicao -= 1
+
+# teste do vetor
+
+vetor = VetorOrdenado(10)
+
+vetor.insere(6)
+vetor.insere(4)
+vetor.insere(3)
+vetor.insere(5)
+vetor.insere(1)
+vetor.insere(8)
+
+vetor.pesquisar(3)
+vetor.pesquisar(2)
+vetor.pesquisar(9)
+
+vetor.excluir(5)
+vetor.excluir(9)
