@@ -79,30 +79,37 @@ class VetorOrdenado:
             self.ultima_posicao -= 1
 
 
-vetor = VetorOrdenado(10)
+vetor = VetorOrdenado(100)
+
 # Insercao
-vetor.insere(8)
-vetor.insere(9)
-vetor.insere(4)
-vetor.insere(1)
-vetor.insere(5)
-vetor.insere(7)
-vetor.insere(11)
-vetor.insere(13)
-vetor.insere(2)
+
+for i in range(0+1, 101):
+    vetor.insere(i)
 vetor.imprime()
+vetor.pesquisa_binaria(33)
 
-# Debug do vetor pela pesquisa linear
-vetor.pesquisa_linear(3)
-vetor.pesquisa_linear(2)
-vetor.pesquisa_linear(9)
-
-# Exclusao
-# vetor.excluir(15)
-# vetor.excluir(9)
-
-# Debug do vetor pela pesquisa Binaria
-vetor.pesquisa_binaria(7)
-vetor.pesquisa_binaria(5)
-vetor.pesquisa_binaria(13)
-vetor.pesquisa_binaria(20)
+# vetor.insere(8)
+# vetor.insere(9)
+# vetor.insere(4)
+# vetor.insere(1)
+# vetor.insere(5)
+# vetor.insere(7)
+# vetor.insere(11)
+# vetor.insere(13)
+# vetor.insere(2)
+# vetor.imprime()
+#
+# # Debug do vetor pela pesquisa linear
+# vetor.pesquisa_linear(3)
+# vetor.pesquisa_linear(2)
+# vetor.pesquisa_linear(9)
+#
+# # Exclusao
+# # vetor.excluir(15)
+# # vetor.excluir(9)
+#
+# # Debug do vetor pela pesquisa Binaria
+# vetor.pesquisa_binaria(7)
+# vetor.pesquisa_binaria(5)
+# vetor.pesquisa_binaria(13)
+# vetor.pesquisa_binaria(20)
